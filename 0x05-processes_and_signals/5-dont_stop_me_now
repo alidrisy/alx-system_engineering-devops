@@ -4,4 +4,4 @@ x=$(ps aux | grep "./4-to_infinity_and_beyond")
 x=$(echo "$x" | grep "bash")
 n=$(echo "$x" | cut --complement -d " " -f 1)
 s=$(echo "$n" | cut -d " " -f 2)
-kill -s SIGTERM $s
+kill  $s
