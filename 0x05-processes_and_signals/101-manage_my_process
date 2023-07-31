@@ -7,9 +7,10 @@ then
 	echo "manage_my_process started"
 elif [ "$1" = "stop" ];
 then
-	rm /var/run/my_process.pid
+	pkill -nf 101-manage_my_process &
+	rm -f /var/run/my_process.pid
 	echo "manage_my_process stopped"
-	pkill -nf 101-manage_my_process
+
 elif [ "$1" = "restart" ];
 then
 	disown -r
