@@ -12,7 +12,7 @@ then
 	echo "manage_my_process stopped"
 elif [ "$1" = "restart" ];
 then
-	pkill -f manage_my_process &
+	disown -r
         rm /var/run/my_process.pid
 	./manage_my_process &
         echo "$$" > /var/run/my_process.pid
