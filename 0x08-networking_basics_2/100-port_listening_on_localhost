@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script listens on port 98 on localhost.
 nc -l 98 > massege
-if [ -e masswge]
+if [ -e masswge ];
 then
 	cat massege
 fi
