@@ -1,0 +1,6 @@
+# kills a process named killmenow.
+
+exec {'executeacommand':
+   command  => 'pkill -f "killmenow"',
+   provider => 'shell',
+ }
