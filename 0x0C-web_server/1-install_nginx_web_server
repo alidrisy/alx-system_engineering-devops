@@ -2,5 +2,5 @@
 # This script insatall nginx into the server
 sudo apt-get -y update
 sudo ap-get -y install nginx
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo echo "Hello World!" > /var/www/html/index.nginx-debian.html
 sudo service nginx start
