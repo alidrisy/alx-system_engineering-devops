@@ -6,5 +6,5 @@ sudo apt-get -y install nginx
 sudo ufw allow 'nginx HTTP'
 
 echo -e "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sudo sed -i "24i/	error_page 404 /custom_404.html;\n 	location = /custom_404.html {\n 		internal;\n	}" /etc/nginx/sites-available/default
+sudo sed -i '26i/     error_page 404 /custom_404.html;\n     location = /custom404.html {\n         internal;\n     }' /etc/nginx/sites-available/default
 sudo service nginx restart
