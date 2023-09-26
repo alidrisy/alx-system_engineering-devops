@@ -1,3 +1,5 @@
+# Setup New Ubuntu server with nginx
+
 exec {'update':
   command => 'apt-get -y update',
   provider => 'shell'
