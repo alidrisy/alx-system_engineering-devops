@@ -1,13 +1,13 @@
 # Setup New Ubuntu server with nginx 
   
- exec { 'update system': 
+ exec { 'update env': 
          command => 'apt-get -y update',
 	 provider => 'shell'
  } 
   
  package { 'nginx': 
          ensure => 'installed', 
-         require => Exec['update system'] 
+         require => Exec['update env'] 
  } 
   
  file {'/var/www/html/index.html': 
@@ -21,5 +21,6 @@
   
  service {'nginx': 
          ensure => running, 
-         require => Package['nginx'] 
+	 enable => true,
+	 Restart => true
  }
