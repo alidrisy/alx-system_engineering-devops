@@ -21,6 +21,5 @@
   
  service {'nginx': 
          ensure => running, 
-	 enable => true,
-	 Restart => true
+	 require => Package['nginx']
  }
