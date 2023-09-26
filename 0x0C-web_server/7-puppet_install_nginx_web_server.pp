@@ -1,13 +1,13 @@
 # Setup New Ubuntu server with nginx 
   
- exec { 'update env': 
+ exec { 'update system': 
          command => 'apt-get -y update',
 	 provider => 'shell'
  } 
   
  package { 'nginx': 
          ensure => 'installed', 
-         require => Exec['update env'] 
+         require => Exec['update system'] 
  } 
   
  file {'/var/www/html/index.html': 
