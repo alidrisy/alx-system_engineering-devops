@@ -20,7 +20,7 @@ file {"/var/www/html/index.nginx-debian.html":
 file_line {'set redirect':
   ensure => present,
   path   => '/etc/nginx/sites-available/default',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  line   => "rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;",
   after  => 'listen 80 default_server;',
   }
 	  
