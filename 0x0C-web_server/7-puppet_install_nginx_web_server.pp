@@ -24,6 +24,5 @@ exec {'redirect_me':
 	  
 service {'nginx':
   ensure => running,
-  enable => true,
   Restart => true
   }
