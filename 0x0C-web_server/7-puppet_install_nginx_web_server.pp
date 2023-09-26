@@ -1,11 +1,11 @@
 # Setup New Ubuntu server with nginx
 
-exec {'update':
-  command => '/usr/bin/apt-get update -y',
+exec {'update env':
+  command => '/usr/bin/apt-get update',
   }
 pakage {'nginx':
   ensure => 'installed'
-  require => Exec['update'],
+  require => Exec['update env'],
   }
 
 
