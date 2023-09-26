@@ -1,13 +1,14 @@
 # Setup New Ubuntu server with nginx
 
 exec {'update':
-  command => 'apt-get -y update',
+  command => '/usr/bin/apt-get update',
   provider => 'shell'
   }
 
 pakage {'nginx':
-  provider => 'apt-get',
+  provider => 'apt',
   install_options =>[ '-y' ]
+  require => Exec['update'],
   }
 
 
