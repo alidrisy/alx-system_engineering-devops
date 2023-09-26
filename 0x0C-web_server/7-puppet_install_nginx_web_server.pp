@@ -4,8 +4,8 @@ exec {'update env':
   command => '/usr/bin/apt-get update',
   }
 pakage {'nginx':
-  ensure => 'installed'
-  require => Exec['update env'],
+  ensure => 'installed',
+  require => Exec['update env']
   }
 
 
