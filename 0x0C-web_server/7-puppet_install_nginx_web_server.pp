@@ -23,7 +23,7 @@ exec {'redirect_me':
  }
 	  
 service {'nginx':
-  ensure => 'running',
+  ensure => running,
   enable => true,
   Restart => true
   }
