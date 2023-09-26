@@ -1,7 +1,8 @@
 # Setup New Ubuntu server with nginx 
   
  exec { 'update system': 
-         command => '/usr/bin/apt-get update', 
+         command => 'apt-get -y update',
+	 provider => 'shell'
  } 
   
  package { 'nginx': 
