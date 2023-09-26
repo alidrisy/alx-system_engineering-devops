@@ -1,11 +1,11 @@
 exec {'update':
   command => 'apt-get -y update',
-  provider => 'shell',
+  provider => 'shell'
   }
 
 pakage {'nginx':
   provider => 'apt-get',
-  install_options =>[ '-y' ],
+  install_options =>[ '-y' ]
   }
 
 
@@ -14,18 +14,16 @@ file {"/var/www/html/index.nginx-debian.html":
   owner => '$USER',
   group =>  '$USER',
   mode => '0744',
-  content => 'Hello World!,
+  content => 'Hello World!
   }
 
-file_line {'set redirect':
-  ensure => present,
-  path   => '/etc/nginx/sites-available/default',
-  line   => "rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;",
-  after  => 'listen 80 default_server;',
-  }
+exec {'redirect_me':
+  command => 'sed -i "24i\        rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
+  provider => 'shell' 
+ }
 	  
 service {'nginx':
   ensure => 'running'
   enable => true,
-  Restart => true,
+  Restart => true
   }
