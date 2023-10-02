@@ -14,8 +14,8 @@ frontend http
 
 backend web-server
 	balance roundrobin
-	server web-01 54.90.27.152:80 check
-	server web-02 35.153.17.86:80 check
+	server 364412-web-01 54.90.27.152:80 check
+	server 364412-web-02 35.153.17.86:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 echo "ENABLED=1" >> /etc/default/haproxy
