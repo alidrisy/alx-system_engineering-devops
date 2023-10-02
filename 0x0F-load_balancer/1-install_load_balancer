@@ -2,11 +2,11 @@
 #Install and configure HAproxy on your lb-01 server.
 # shellcheck disable=SC2028
 sudo -y apt-get update
-sudo apt-get install --no-install-recommends software-properties-common -y
 sudo -y add-apt-repository ppa:vbernat/haproxy-2.8
 sudo -y apt-get install haproxy=2.8.\*
 
-echo 'frontend http
+echo '
+frontend http
 	bind *:80
 	mode http
 	default_backend web-server
