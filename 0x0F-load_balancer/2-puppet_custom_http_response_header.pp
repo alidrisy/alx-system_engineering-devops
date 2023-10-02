@@ -1,5 +1,4 @@
 # creating a custom HTTP header response
-
  exec { 'update system':
           command => 'apt-get -y update',
           provider => 'shell'
@@ -21,7 +20,7 @@
 
   
  exec {'HTTP header': 
-         command => 'sed -i "26i\	 add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default', 
+         command => 'sed -i "25i\\tadd_header X-Served-By \$hostname;" /etc/nginx/sites-available/default', 
          provider => 'shell' 
  } 
   
