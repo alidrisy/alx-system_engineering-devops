@@ -3,7 +3,7 @@
  exec { 'update system':
          command => 'apt-get -y update',
          provider => 'shell'
-  }
+ }
  
  package { 'nginx': 
          ensure => 'installed', 
