@@ -4,9 +4,10 @@
 get_domain () {
 	record=$(dig $1 | awk '/ANSWER SECTION/ {getline; print $4}')
 	ip=$(dig $1 | awk '/ANSWER SECTION/ {getline; print $5}')
-	echo "The subdomain $subdomain is a $record record and points to $ip"
+	sub=$(echo "$1" | cut -d "." -f1)
+	echo "The subdomain $sub is a $record record and points to $ip"
 }
-if [ -z $2 ]; then
+if [ -z "$2" ]; then
 	for i in 'www' 'lb-01' 'web-01' 'web-02'; do
 		sub=$i.$1
 		get_domain "$sub"
