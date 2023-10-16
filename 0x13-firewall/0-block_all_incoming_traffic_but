@@ -1,0 +1,3 @@
+sudo ufw allow in 22/tcp
+sudo ufw allow in 443/tcp
+sudo ufw allow in 80/tcp
