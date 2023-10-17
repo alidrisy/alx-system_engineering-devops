@@ -2,6 +2,6 @@
 # Running Nginx as the nginx user.
 sed -i '1i\user nginx;' /etc/nginx/nginx1.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
-service apache2 stop
+pkill apache2
 service nginx stop
 sudo -unginx service nginx start
