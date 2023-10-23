@@ -13,7 +13,7 @@ if __name__ == "__main__":
     file_csv = f"{user['id']}.csv"
     fields = ['userId', 'user_name', 'completed', 'title']
     for dict1 in to_do:
-        dict1['user_name'] = user['name']
+        dict1['user_name'] = user['username']
     with open(file_csv, 'w') as fn:
         writer = csv.DictWriter(fn, fieldnames=fields, extrasaction='ignore')
         writer.writerows(to_do)
