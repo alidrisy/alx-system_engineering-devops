@@ -15,5 +15,6 @@ if __name__ == "__main__":
     for dict1 in to_do:
         dict1['user_name'] = user['username']
     with open(file_csv, 'w', newline="") as fn:
-        writer = csv.DictWriter(fn, fieldnames=fields, extrasaction='ignore', doublequote=True, quoting=csv.QUOTE_ALL)
+        writer = csv.DictWriter(fn, fieldnames=fields, extrasaction='ignore',
+                                quoting=csv.QUOTE_ALL)
         writer.writerows(to_do)
