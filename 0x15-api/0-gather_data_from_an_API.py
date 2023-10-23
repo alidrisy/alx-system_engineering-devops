@@ -10,6 +10,7 @@ if __name__ == "__main__":
     user = requests.get(url).json()
     to_do = requests.get(f'{url}/todos').json()
     complet = [t.get("title") for t in to_do if t.get("completed") is True]
-    print(f"Employee {user['name']} is done with tasks({len(complet)}/{len(to_do)}):")
+    print(f"Employee {user['name']} is done with tasks({len(complet)}/\
+{len(to_do)}):")
     for i in complet:
         print(f"\t {i}")
