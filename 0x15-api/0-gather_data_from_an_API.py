@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" using this REST API, for a given employee ID, returns information about 
+""" using this REST API, for a given employee ID, returns information about
 his/her TODO list progress and print it """
-import requests, sys
+import requests
+import sys
 
 
 if __name__ == "__main__":
