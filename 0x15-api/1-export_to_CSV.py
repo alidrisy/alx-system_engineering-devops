@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+""" using this REST API, for a given employee ID, returns information about
+his/her TODO list progress and print it """
+import csv
+import requests
+import sys
+
+
+if __name__ == "__main__":
+    url = f"https://jsonplaceholder.typicode.com/users/{int(sys.argv[1])}"
+    user = requests.get(url).json()
+    to_do = requests.get(f'{url}/todos').json()
+    file_csv = f"{user['id']}.csv"
+    fields = ['userId', 'user_name', 'completed', 'title']
+    for dict1 in to_do:
+        dict1['user_name'] = user['name']
+    with open(file_csv, 'w') as fn:
+        writer = csv.DictWriter(fn, fieldnames=fields, extrasaction='ignore')
+        writer.writerows(to_do)
