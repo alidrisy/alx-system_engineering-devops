@@ -9,10 +9,7 @@ if __name__ == "__main__":
     url = f"https://jsonplaceholder.typicode.com/users/{int(sys.argv[1])}"
     user = requests.get(url).json()
     to_do = requests.get(f'{url}/todos').json()
-    x = 0
-    for i in to_do:
-        if True in i.values():
-            x += 1
-    print(f"Employee {user['name']} is done with tasks({x}/{len(to_do)}):")
-    for i in range(len(to_do)):
-        print(f" \t{to_do[i]['title']}")
+    complet = [t.get("title") for t in to_do if t.get("completed") is True]
+    print(f"Employee {user['name']} is done with tasks({len(complet)}/{len(to_do)}):")
+    for i in complet:
+        print(f"\t {i}")
