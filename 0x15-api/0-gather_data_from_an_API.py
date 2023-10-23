@@ -5,11 +5,9 @@ import requests, sys
 
 
 if __name__ == "__main__":
-    url = f"https://jsonplaceholder.typicode.com/users/{sys.argv[1]}"
-    user = requests.get(url)
-    to_do = requests.get(f'{url}/todos')
-    to_do = to_do.json()
-    user = user.json()
+    url = f"https://jsonplaceholder.typicode.com/users/{int(sys.argv[1])}"
+    user = requests.get(url).json()
+    to_do = requests.get(f'{url}/todos').json()
     x = 0
     for i in to_do:
         if True in i.values():
