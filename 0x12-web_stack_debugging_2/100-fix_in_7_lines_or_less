@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Running Nginx as the nginx user and make it lisning for 8080 port.
+chmod 644 /etc/nginx/nginx.conf
+sed -i "s/# user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+pkill apache2
+sudo -unginx service nginx start
