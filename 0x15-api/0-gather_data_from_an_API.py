@@ -13,6 +13,6 @@ if __name__ == "__main__":
     for i in to_do:
         if True in i.values():
             x += 1
-    print(f"Employee {user['name']} is done with tasks({x}/{len(to_do)})")
+    print(f"Employee {user['name']} is done with tasks({x}/{len(to_do)}):")
     for i in range(len(to_do)):
         print(f" \t{to_do[i]['title']}")
