@@ -8,13 +8,14 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     titles of all hot articles for a given subreddit """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     params = {'after': after, 'limit': 100, 'count': count}
-    response = requests.get(url, params=params, allow_redirects=False)
+    response = requests.get(url, params=params, headers=headers, allow_redirects=False)
     if response.status_code == '404':
         return None
     data = response.json()
     for post in data['data']['children']:
         hot_list.append(post['data']['title'])
     after = data['data']['after']
+    count = data['data']['dist']
     if after is not None:
-        recurse(subreddit, hot_list, after)
+        recurse(subreddit, hot_list, after, count)
     return hot_list
