@@ -7,7 +7,7 @@ def top_ten(subreddit):
     """ Queries the Reddit API and returns a list containing the
     titles of all hot articles for a given subreddit. """
     try:
-        response = requests.get('https://www.reddit.com/r/{}/about.json'
+        response = requests.get('https://www.reddit.com/r/{}/hot.json?limit=10'
                                 .format(subreddit), allow_redirects=False)
         if response.status_code == '404':
             print(None)
