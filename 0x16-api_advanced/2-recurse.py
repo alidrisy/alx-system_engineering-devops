@@ -11,8 +11,8 @@ def recurse(subreddit, hot_list=[], after=None):
                 "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
                 }
         if after:
-            url = 'https://www.reddit.com/r/{}/hot.json?after={}'
-            .format(subreddit, after)
+            url = 'https://www.reddit.com/r/{}/hot.json?after={}'\
+                    .format(subreddit, after)
         else:
             url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
         response = requests.get(url, headers=headers, allow_redirects=False)
