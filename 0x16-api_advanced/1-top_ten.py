@@ -11,6 +11,7 @@ def top_ten(subreddit):
                                 .format(subreddit), allow_redirects=False)
         if response.status_code == '404':
             print(None)
+            return
         data = response.json()
         titles = []
         for post in data['data']['children']:
