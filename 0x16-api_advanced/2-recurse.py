@@ -9,8 +9,7 @@ def recurse(subreddit, hot_list=[], after="", count=0):
     try:
         url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
         params = {'after': after, 'limit': 100, 'count': count}
-        response = requests.get(url, params=params, headers=headers,
-                                allow_redirects=False)
+        response = requests.get(url, params=params, allow_redirects=False)
         if response.status_code == '404':
             return None
         data = response.json()
