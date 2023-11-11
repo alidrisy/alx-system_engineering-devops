@@ -1,7 +1,6 @@
 <h1>0x19. Postmortem</h1>
 
 <br>
-<br>
 <h2>Resources</h2>
 <h4>Read or watch:</h4>
 <ul>
@@ -10,7 +9,6 @@
   <li><a href="https://intranet.alxswe.com/rltoken/kBjhT2PIr4X-U8FLI97--Q">What is an Incident Postmortem?</a></li>
 </ul>
 <br>
-<br>
 <h1></h1>
 <p><b>A postmortem is a tool widely used in the tech industry. After any outage, the team(s) in charge of the system will write a summary that has 2 main goals:</b></p><ul>
 <li>To provide the rest of the company’s employees easy access to information detailing the cause of the outage. Often outages can have a huge impact on a company, so managers and executives have to understand what happened and how it will impact their work.</li>
@@ -18,7 +16,7 @@
 </ul>
 
 <br>
-<br>
+<h1></h1>
 <h3>Tasks:</h3>
 <ul>
   <li><a href="https://docs.google.com/document/d/1rbq7p2f8cKJe18zZlx3otX74Wm6wIFA_MzE5NNO5S3A/edit?usp=drivesdk">0. My first postmortem</a></li>
