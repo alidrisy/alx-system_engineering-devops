@@ -1,0 +1,8 @@
+<h1>0x1A. Application server</h1>
+
+
+<h3>Background Context</h3>
+
+<p>Your web infrastructure is already serving web pages via Nginx that you installed in your first web stack project. While a web server can also serve dynamic content, this task is usually given to an application server. In this project you will add this piece to your infrastructure, plug it to your<b> Nginx </b>and make is serve your Airbnb clone project.</p>
+
+
