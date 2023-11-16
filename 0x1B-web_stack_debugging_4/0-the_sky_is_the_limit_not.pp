@@ -4,3 +4,7 @@ exec {'Change open files limit':
     provider => shell,
     onlyif   => 'test -f /etc/default/nginx'
 }
+exec {'Restart nginx':
+    command  => 'service nginx start',
+    provider => shell,
+}
