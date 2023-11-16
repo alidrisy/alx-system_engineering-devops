@@ -7,4 +7,5 @@ exec {'Change open files limit':
 exec {'Restart nginx':
     command  => 'service nginx restart',
     provider => shell,
+    require  => Exec['Change open files limit']
 }
